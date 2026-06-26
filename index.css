@@ -283,7 +283,7 @@ body {
     gap: 12px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
     .header-actions {
         display: flex;
     }
@@ -1305,6 +1305,170 @@ body {
     }
 }
 
+/* ══ Mobile Responsiveness ══ */
+@media (max-width: 767px) {
+    /* Reduce left/right padding */
+    .container {
+        padding: 0 16px !important;
+    }
+
+    .qualify-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Put form above info card */
+    .form-info {
+        order: 2;
+    }
+    .form-container {
+        order: 1;
+        padding: 24px !important;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    #top {
+        padding-bottom: 40px !important;
+    }
+
+    .content-section {
+        padding: 50px 0;
+    }
+
+    #how-it-works {
+        padding: 60px 0 !important;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-subtitle {
+        font-size: 15px;
+    }
+
+    .btn-lg {
+        height: 44px;
+        padding: 0 22px;
+        font-size: 14px;
+    }
+
+    /* Stack hero & CTA buttons vertically */
+    .hero-animate-delay-3 {
+        flex-direction: column !important;
+    }
+
+    .hero-animate-delay-3 .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #cta-section .container > div > div {
+        flex-direction: column !important;
+    }
+
+    #cta-section .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Footer grid */
+    .footer-top {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    /* ── How Do I Start: Horizontal Carousel ── */
+    .steps-grid {
+        display: flex !important;
+        grid-template-columns: none !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 16px !important;
+        padding-bottom: 8px;
+    }
+
+    .steps-grid > * {
+        flex: 0 0 85%;
+        min-width: 280px;
+        scroll-snap-align: start;
+    }
+
+    .steps-grid::-webkit-scrollbar {
+        display: none;
+    }
+    .steps-grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    /* ── Precious Metals: Horizontal Carousel ── */
+    .metals-carousel {
+        display: flex !important;
+        grid-template-columns: none !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 16px !important;
+        padding-bottom: 8px;
+    }
+
+    .metals-carousel > * {
+        flex: 0 0 80%;
+        min-width: 260px;
+        scroll-snap-align: start;
+    }
+
+    .metals-carousel::-webkit-scrollbar {
+        display: none;
+    }
+    .metals-carousel {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .qualify-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Put form above info card on tablet too */
+    .form-info {
+        order: 2;
+    }
+    .form-container {
+        order: 1;
+    }
+
+    /* Metals carousel on tablet */
+    .metals-carousel {
+        display: flex !important;
+        grid-template-columns: none !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 16px !important;
+    }
+
+    .metals-carousel > * {
+        flex: 0 0 45%;
+        min-width: 280px;
+        scroll-snap-align: start;
+    }
+
+    .metals-carousel::-webkit-scrollbar {
+        display: none;
+    }
+    .metals-carousel {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
 /* Mobile Navigation */
 .mobile-nav {
     position: fixed;
@@ -1316,6 +1480,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 24px;
+    overflow-y: auto;
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
