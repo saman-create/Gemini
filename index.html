@@ -12,15 +12,7 @@
       content="OAKSORS is a wholesale precious metals company that provides service internationally and to all 50 states. Ask about our tax-free, penalty-free IRA rollover process."
     />
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
-
-    <!-- Preload Fonts & Video -->
-    <link
-      rel="preload"
-      as="video"
-      href="assets/videos/hero-1.mp4"
-      type="video/mp4"
-      fetchpriority="high"
-    />
+    <!-- Preload Fonts -->
     <link
       rel="preload"
       as="font"
@@ -39,37 +31,63 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
+    <!-- ============================================
+         SITE CONFIG — Edit your links & info here!
+         All links across the site update automatically.
+         ============================================ -->
+    <script>
+      var SITE_CONFIG = {
+
+        // ── Contact Info ──
+        phone:        "(855) 612-5017",
+        phoneLink:    "tel:8556125017",
+        email:        "corporate@oaksorsllc.com",
+        emailLink:    "mailto:corporate@oaksorsllc.com",
+
+        // ── Social Media Links ──
+        tiktok:       "#",
+        youtube:      "#",
+        linkedin:     "#",
+
+        // ── Hero Video Background ──
+        heroVideo:    "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260325_094440_a3592600-bd1e-49e5-9bce-a73662061d83.mp4",
+
+        // ── Privacy & Legal ──
+        privacyLink:  "#",
+      };
+    </script>
+
     <!-- TOP BAR -->
     <div id="top-bar" class="top-bar">
       <div class="top-bar-inner">
         <div class="top-bar-left">
-          <a href="tel:8556125017" class="top-bar-link">
+          <a data-link="phoneLink" class="top-bar-link">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
             </svg>
-            (855) 612-5017
+            <span data-text="phone"></span>
           </a>
           <span class="top-bar-divider"></span>
-          <a href="mailto:corporate@oaksorsllc.com" class="top-bar-link">
+          <a data-link="emailLink" class="top-bar-link">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="4" width="20" height="16" rx="2"></rect>
               <path d="M22 7l-10 7L2 7"></path>
             </svg>
-            corporate@oaksorsllc.com
+            <span data-text="email"></span>
           </a>
         </div>
         <div class="top-bar-right">
-          <a href="#" class="top-bar-social" aria-label="TikTok">
+          <a data-link="tiktok" class="top-bar-social" aria-label="TikTok">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .56.04.81.1v-3.53a6.34 6.34 0 0 0-.81-.05A6.34 6.34 0 0 0 3.15 15.3 6.34 6.34 0 0 0 9.49 21.63a6.34 6.34 0 0 0 6.34-6.34V8.75a8.29 8.29 0 0 0 3.76.91V6.69z"/>
             </svg>
           </a>
-          <a href="#" class="top-bar-social" aria-label="YouTube">
+          <a data-link="youtube" class="top-bar-social" aria-label="YouTube">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
           </a>
-          <a href="#" class="top-bar-social" aria-label="LinkedIn">
+          <a data-link="linkedin" class="top-bar-social" aria-label="LinkedIn">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
@@ -186,10 +204,33 @@
           padding: 160px 0 100px;
         "
       >
+        <!-- Hero Video Background -->
+        <video
+          id="hero-video"
+          class="hero-bg-animate"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="assets/images/hero-img.png"
+          style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            z-index: -1;
+          "
+        >
+          <source data-src-config="heroVideo" type="video/mp4" />
+        </video>
+        <!-- Fallback static image (hidden when video loads) -->
         <img
+          id="hero-fallback-img"
           src="assets/images/hero-img.png"
           alt="Hero Background"
-          class="hero-bg-animate"
           style="
             position: absolute;
             top: 0;
@@ -198,7 +239,7 @@
             height: 100%;
             object-fit: cover;
             object-position: right center;
-            z-index: -1;
+            z-index: -2;
           "
         />
 
@@ -1636,7 +1677,7 @@
             </h4>
             <div style="display: flex; flex-direction: column; gap: 16px">
               <a
-                href="tel:18556125017"
+                data-link="phoneLink"
                 style="
                   display: flex;
                   align-items: center;
@@ -1657,10 +1698,10 @@
                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
                   ></path>
                 </svg>
-                +1 (855) 612-5017
+                <span data-text="phone"></span>
               </a>
               <a
-                href="mailto:corporate@oaksorsllc.com"
+                data-link="emailLink"
                 style="
                   display: flex;
                   align-items: center;
@@ -1682,10 +1723,10 @@
                   ></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
-                corporate@oaksorsllc.com
+                <span data-text="email"></span>
               </a>
               <div style="display: flex; gap: 16px; margin-top: 16px">
-                <a href="#" style="color: var(--c-pale-yellow)"
+                <a data-link="tiktok" style="color: var(--c-pale-yellow)"
                   ><svg
                     width="20"
                     height="20"
@@ -1696,7 +1737,7 @@
                       d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
                     /></svg
                 ></a>
-                <a href="#" style="color: var(--c-pale-yellow)"
+                <a data-link="youtube" style="color: var(--c-pale-yellow)"
                   ><svg
                     width="20"
                     height="20"
@@ -1707,7 +1748,7 @@
                       d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
                     /></svg
                 ></a>
-                <a href="#" style="color: var(--c-pale-yellow)"
+                <a data-link="linkedin" style="color: var(--c-pale-yellow)"
                   ><svg
                     width="20"
                     height="20"
@@ -1738,7 +1779,7 @@
             <span style="color: var(--c-pale-yellow)">OAKSORS</span>. All Rights
             Reserved.
           </p>
-          <a href="#" style="color: var(--c-pale-yellow); text-decoration: none"
+          <a data-link="privacyLink" style="color: var(--c-pale-yellow); text-decoration: none"
             >Privacy Notice</a
           >
         </div>
@@ -1748,5 +1789,36 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script>
+      // ── Apply SITE_CONFIG to all data-link, data-text, and data-src-config elements ──
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof SITE_CONFIG === 'undefined') return;
+
+        // Set href on all [data-link] elements
+        document.querySelectorAll('[data-link]').forEach(function(el) {
+          var key = el.getAttribute('data-link');
+          if (SITE_CONFIG[key]) el.href = SITE_CONFIG[key];
+        });
+
+        // Set textContent on all [data-text] elements
+        document.querySelectorAll('[data-text]').forEach(function(el) {
+          var key = el.getAttribute('data-text');
+          if (SITE_CONFIG[key]) el.textContent = SITE_CONFIG[key];
+        });
+
+        // Set src on all [data-src-config] elements (video sources, images, etc.)
+        document.querySelectorAll('[data-src-config]').forEach(function(el) {
+          var key = el.getAttribute('data-src-config');
+          if (SITE_CONFIG[key]) {
+            el.src = SITE_CONFIG[key];
+            // If it's a <source> inside a <video>, reload the video
+            if (el.tagName === 'SOURCE' && el.parentElement && el.parentElement.tagName === 'VIDEO') {
+              el.parentElement.load();
+              el.parentElement.play().catch(function() {});
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
