@@ -30,7 +30,71 @@
 
     <link rel="stylesheet" href="index.css" />
   </head>
-  <body>
+  <body style="opacity: 0; transition: opacity 0.6s ease">
+    <!-- ══ PRELOADER ══ -->
+    <div
+      id="site-preloader"
+      style="
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: #070b0a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        transition:
+          opacity 0.5s ease,
+          visibility 0.5s ease;
+      "
+    >
+      <!-- Logo -->
+      <div style="display: flex; align-items: center; gap: 10px">
+        <img
+          src="assets/images/dark-logo.png"
+          alt="OAKSORS"
+          style="
+            height: 40px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            animation: loaderPulse 2s ease-in-out infinite;
+          "
+        />
+      </div>
+      <!-- Progress bar -->
+      <div
+        style="
+          width: 200px;
+          height: 2px;
+          background: rgba(255, 255, 255, 0.08);
+          border-radius: 2px;
+          overflow: hidden;
+        "
+      >
+        <div
+          id="loader-bar"
+          style="
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #1eba97, #5ed29c);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+          "
+        ></div>
+      </div>
+      <p
+        style="
+          font-family: &quot;GT Standard&quot;, sans-serif;
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.35);
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+        "
+      >
+        Loading
+      </p>
+    </div>
     <!-- ============================================
          SITE CONFIG — Edit your links & info here!
          All links across the site update automatically.
@@ -225,9 +289,9 @@
           position: relative;
           min-height: 100vh;
           display: flex;
-          align-items: center;
+          align-items: flex-end;
           overflow: hidden;
-          padding: 160px 0 100px;
+          padding: 0 0 60px;
         "
       >
         <!-- Hero Video Background -->
@@ -238,7 +302,6 @@
           muted
           loop
           playsinline
-          poster="assets/images/hero-img.png"
           style="
             position: absolute;
             top: 36px;
@@ -252,64 +315,39 @@
         >
           <source data-src-config="heroVideo" type="video/mp4" />
         </video>
-        <!-- Fallback static image (hidden when video loads) -->
-        <img
-          id="hero-fallback-img"
-          src="assets/images/hero-img.png"
-          alt="Hero Background"
-          style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: right center;
-            z-index: -2;
-          "
-        />
 
         <div
           class="container"
-          style="
-            position: relative;
-            z-index: 10;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-          "
+          style="position: relative; z-index: 10; width: 100%"
         >
-          <div style="max-width: 600px">
+          <div style="max-width: 800px">
             <h1
               class="hero-animate hero-animate-delay-1"
               style="
-                font-size: clamp(36px, 3.5vw, 48px);
-                line-height: 1;
-                margin-bottom: 24px;
-                font-weight: 500;
-                letter-spacing: 0.5px;
-                color: var(--c-white);
+                font-size: clamp(40px, 5.5vw, 72px);
+                line-height: 0.97;
+                margin-bottom: 20px;
+                font-weight: 400;
+                letter-spacing: -0.04em;
+                color: #ffffff;
               "
             >
-              Ask about our Tax-free, Penalty-free IRA rollover Process for your
-              new precious metals backed IRA.
+              Roll over your IRA into precious metals.
             </h1>
             <p
               class="hero-animate hero-animate-delay-2"
               style="
-                font-size: 20px;
+                font-family: &quot;Inter&quot;, sans-serif;
+                font-size: clamp(16px, 1.2vw, 18px);
                 font-weight: 400;
-                opacity: 0.9;
-                margin-bottom: 40px;
-                line-height: 1.6;
-                color: var(--c-white);
-                max-width: 500px;
+                margin-bottom: 32px;
+                line-height: 1.45;
+                color: #d1d5db;
+                max-width: 520px;
               "
             >
-              Experience a simple, quick, and honest approach to protecting your
-              retirement wealth.
+              Ask about our simple, tax- and penalty-free process for opening a
+              new precious metals-backed IRA.
             </p>
 
             <div
@@ -340,20 +378,7 @@
               >
             </div>
           </div>
-
-          <!-- <div class="hero-bars-container">
-            <img
-              src="assets/images/gold.png"
-              alt="Gold Bar"
-              class="hero-bar hero-bar-gold"
-            />
-            <img
-              src="assets/images/silver.png"
-              alt="Silver Bar"
-              class="hero-bar hero-bar-silver"
-            />
-          </div>
-        </div> -->
+        </div>
       </section>
 
       <!-- PARTNER LOGOS -->
@@ -1872,7 +1897,10 @@
           if (url.includes(".m3u8")) {
             if (video) {
               if (typeof Hls !== "undefined" && Hls.isSupported()) {
-                var hls = new Hls({ maxBufferLength: 30, maxMaxBufferLength: 60 });
+                var hls = new Hls({
+                  maxBufferLength: 30,
+                  maxMaxBufferLength: 60,
+                });
                 hls.loadSource(url);
                 hls.attachMedia(video);
                 hls.on(Hls.Events.MANIFEST_PARSED, function () {
@@ -1897,6 +1925,58 @@
           }
         });
       });
+    </script>
+    <script>
+      // ── Preloader Logic ──
+      (function () {
+        var preloader = document.getElementById("site-preloader");
+        var loaderBar = document.getElementById("loader-bar");
+        var body = document.body;
+        var video = document.getElementById("hero-video");
+        var progress = 0;
+        var dismissed = false;
+
+        // Simulate progress bar
+        var progressInterval = setInterval(function () {
+          if (progress < 90) {
+            progress += Math.random() * 8 + 2;
+            if (progress > 90) progress = 90;
+            loaderBar.style.width = progress + "%";
+          }
+        }, 200);
+
+        function dismissPreloader() {
+          if (dismissed) return;
+          dismissed = true;
+          clearInterval(progressInterval);
+
+          // Fill bar to 100%
+          loaderBar.style.width = "100%";
+
+          setTimeout(function () {
+            // Show body
+            body.style.opacity = "1";
+
+            // Fade out preloader
+            preloader.style.opacity = "0";
+            preloader.style.visibility = "hidden";
+
+            // Remove from DOM after animation
+            setTimeout(function () {
+              preloader.remove();
+            }, 600);
+          }, 300);
+        }
+
+        // Wait for hero video to start playing
+        if (video) {
+          video.addEventListener("playing", dismissPreloader);
+          video.addEventListener("canplaythrough", dismissPreloader);
+        }
+
+        // Fallback: dismiss after 10 seconds regardless
+        setTimeout(dismissPreloader, 10000);
+      })();
     </script>
   </body>
 </html>

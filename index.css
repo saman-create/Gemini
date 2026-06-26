@@ -1,3 +1,9 @@
+/* Preloader Animations */
+@keyframes loaderPulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.04); }
+}
+
 :root {
     /* Colors */
     --c-black: #000000;
@@ -292,46 +298,77 @@ body {
     cursor: pointer;
     text-decoration: none;
     height: 38px;
-    padding: 0 16px;
+    padding: 0 18px;
     gap: 8px;
-    border-radius: 9999px;
+    border-radius: 10px;
     border: none;
     font-size: 15px;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: all 0.3s ease;
     font-family: inherit;
 }
 
 .btn-lg {
     height: 48px;
-    padding: 0 24px;
-    font-size: 18px;
+    padding: 0 28px;
+    font-size: 15px;
 }
 
-.btn-ghost {
-    background: color-mix(in srgb, currentColor 10%, transparent);
-    color: currentColor;
-    backdrop-filter: blur(8px);
-}
-
-.btn-ghost:hover {
-    background: color-mix(in srgb, currentColor 30%, transparent);
-}
-
+/* Primary: solid white, black text */
 .btn-primary {
-    background: var(--c-pale-yellow);
-    color: var(--c-white);
+    background: #ffffff;
+    color: #000000;
 }
 
 .btn-primary:hover {
-    background: #199e80; /* A darker shade of the brand green */
+    background: #e5e7eb;
 }
 
 .btn-primary:hover .btn-icon {
     transform: rotate(45deg);
 }
 
+/* Ghost: glass-style, white border */
+.btn-ghost {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.btn-ghost:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
 .btn-icon {
     transition: transform 0.3s ease-out;
+}
+
+/* ── Buttons on light backgrounds (auto-invert) ── */
+.content-section:not(.bg-dark) .btn-primary,
+.form-container .btn-primary {
+    background: var(--c-pale-yellow);
+    color: #ffffff;
+}
+
+.content-section:not(.bg-dark) .btn-primary:hover,
+.form-container .btn-primary:hover {
+    background: #199e80;
+}
+
+.content-section:not(.bg-dark) .btn-ghost {
+    background: transparent;
+    color: var(--c-pale-yellow);
+    border: 1px solid rgba(30, 186, 151, 0.25);
+    backdrop-filter: none;
+}
+
+.content-section:not(.bg-dark) .btn-ghost:hover {
+    background: var(--c-pale-yellow);
+    color: #ffffff;
+    border-color: var(--c-pale-yellow);
 }
 
 .menu-toggle {
@@ -788,7 +825,7 @@ body {
 /* Partner Logos */
 .partner-logos-section {
     background: #f9fafb;
-    padding: 48px 0;
+    padding: 90px 0;
     border-top: 1px solid rgba(0, 0, 0, 0.04);
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
