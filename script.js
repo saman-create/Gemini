@@ -1,10 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Header Scroll Effect & Mobile Nav
     const header = document.getElementById('header');
-    const topBarHeight = 34;
+    const topBar = document.getElementById('top-bar');
+    const topBarHeight = 36;
     
     window.addEventListener('scroll', () => {
-        // Adjust top position smoothly
+        // Hide/show top bar
+        if (topBar) {
+            if (window.scrollY > topBarHeight) {
+                topBar.classList.add('hidden');
+            } else {
+                topBar.classList.remove('hidden');
+            }
+        }
+        
+        // Adjust header top position smoothly
         if (window.scrollY > topBarHeight) {
             header.style.top = '0px';
         } else {
@@ -92,3 +102,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
