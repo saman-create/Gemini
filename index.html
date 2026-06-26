@@ -1838,6 +1838,8 @@
       </div>
     </footer>
 
+    <!-- HLS.js (for .m3u8 streaming URLs) -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <!-- JavaScript -->
     <script src="script.js"></script>
     <script>
@@ -1860,16 +1862,37 @@
         // Set src on all [data-src-config] elements (video sources, images, etc.)
         document.querySelectorAll("[data-src-config]").forEach(function (el) {
           var key = el.getAttribute("data-src-config");
-          if (SITE_CONFIG[key]) {
-            el.src = SITE_CONFIG[key];
-            // If it's a <source> inside a <video>, reload the video
-            if (
-              el.tagName === "SOURCE" &&
-              el.parentElement &&
-              el.parentElement.tagName === "VIDEO"
-            ) {
-              el.parentElement.load();
-              el.parentElement.play().catch(function () {});
+          if (!SITE_CONFIG[key]) return;
+
+          var url = SITE_CONFIG[key];
+          var isSource = el.tagName === "SOURCE";
+          var video = isSource ? el.parentElement : null;
+
+          // ── HLS stream (.m3u8) ──
+          if (url.includes(".m3u8")) {
+            if (video) {
+              if (typeof Hls !== "undefined" && Hls.isSupported()) {
+                var hls = new Hls({ maxBufferLength: 30, maxMaxBufferLength: 60 });
+                hls.loadSource(url);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                  video.play().catch(function () {});
+                });
+              } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+                // Safari native HLS
+                video.src = url;
+                video.addEventListener("loadedmetadata", function () {
+                  video.play().catch(function () {});
+                });
+              }
+            }
+          }
+          // ── Direct file (.mp4, .webm, etc.) ──
+          else {
+            el.src = url;
+            if (isSource && video) {
+              video.load();
+              video.play().catch(function () {});
             }
           }
         });
