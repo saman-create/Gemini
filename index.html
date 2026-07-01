@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <title>OAKSORS — Precious Metals IRA | Simple. Quick. Honest.</title>
+    <title>OAKSORS â€” Precious Metals IRA | Simple. Quick. Honest.</title>
     <meta
       name="description"
       content="OAKSORS is a wholesale precious metals company that provides service internationally and to all 50 states. Ask about our tax-free, penalty-free IRA rollover process."
@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body style="opacity: 0; transition: opacity 0.6s ease">
-    <!-- ══ PRELOADER ══ -->
+    <!-- â•â• PRELOADER â•â• -->
     <div
       id="site-preloader"
       style="
@@ -96,27 +96,27 @@
       </p>
     </div>
     <!-- ============================================
-         SITE CONFIG — Edit your links & info here!
+         SITE CONFIG â€” Edit your links & info here!
          All links across the site update automatically.
          ============================================ -->
     <script>
       var SITE_CONFIG = {
-        // ── Contact Info ──
+        // â”€â”€ Contact Info â”€â”€
         phone: "(855) 612-5017",
         phoneLink: "tel:8556125017",
         email: "corporate@oaksorsllc.com",
         emailLink: "mailto:corporate@oaksorsllc.com",
 
-        // ── Social Media Links ──
+        // â”€â”€ Social Media Links â”€â”€
         tiktok: "#",
         youtube: "#",
         linkedin: "#",
 
-        // ── Hero Video Background ──
-        heroVideo:
-          "https://stream.mux.com/tLkHO1qZoaaQOUeVWo8hEBeGQfySP02EPS02BmnNFyXys.m3u8",
+        // â”€â”€ Hero Video Background (commented out â€” using static image instead) â”€â”€
+        // heroVideo:
+        //   "https://stream.mux.com/tLkHO1qZoaaQOUeVWo8hEBeGQfySP02EPS02BmnNFyXys.m3u8",
 
-        // ── Privacy & Legal ──
+        // â”€â”€ Privacy & Legal â”€â”€
         privacyLink: "#",
       };
     </script>
@@ -294,7 +294,24 @@
           padding: 0 0 60px;
         "
       >
-        <!-- Hero Video Background -->
+        <!-- Hero Image Background -->
+        <img
+          src="assets/images/hero-gold.png"
+          alt="Gold bars and coins"
+          class="hero-bg-animate"
+          style="
+            position: absolute;
+            top: 36px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+          "
+        />
+
+        <!-- Hero Video Background (commented out â€” uncomment to restore video) -->
+        <!--
         <video
           id="hero-video"
           class="hero-bg-animate"
@@ -315,6 +332,7 @@
         >
           <source data-src-config="heroVideo" type="video/mp4" />
         </video>
+        -->
 
         <div
           class="container"
@@ -968,7 +986,7 @@
                   FINALIZE
                 </h3>
                 <p style="font-size: 14px; color: #6b7280; line-height: 1.5">
-                  Once funds have been transferred, we’ll help you select your
+                  Once funds have been transferred, weâ€™ll help you select your
                   Precious Metals and lock-in pricing.
                 </p>
                 <ul
@@ -1021,106 +1039,44 @@
       </section>
 
       <!-- WHY CHOOSE OAKSORS -->
-      <section class="content-section">
-        <div class="container" style="position: relative; z-index: 10">
-          <div class="section-header scroll-reveal">
-            <h2 class="section-title">
-              Why Choose
-              <span style="color: var(--c-pale-yellow)">OAKSORS</span>
-            </h2>
-            <p class="section-subtitle">Simple. Quick. Honest.</p>
-          </div>
-
-          <div class="features-grid">
-            <div class="feature-card scroll-reveal">
-              <div class="feature-icon bg-pale-yellow">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
+      <section class="content-section" style="background: #f9fafb; padding: 100px 0">
+        <div class="container" style="max-width: 1280px; margin: 0 auto; padding: 0 24px">
+          <div class="wc-v1-grid scroll-reveal">
+            <!-- Left: Image -->
+            <div style="position: relative">
+              <div class="wc-v1-img-wrapper">
+                <img src="assets/images/why-choose.jpg" alt="Couple securing gold bars in safe" />
               </div>
-              <h3>VETERAN OWNED BUSINESS</h3>
-              <p>
-                Proudly veteran owned. We bring discipline, integrity, and
-                service excellence to every client relationship.
-              </p>
+              <div class="wc-v1-badge">Serving All <span>50</span> States</div>
             </div>
-
-            <div
-              class="feature-card scroll-reveal"
-              style="transition-delay: 100ms"
-            >
-              <div class="feature-icon bg-pale-yellow">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
+            <!-- Right: Content -->
+            <div>
+              <p class="wc-v1-eyebrow">Why Choose Us</p>
+              <h2 class="wc-v1-title">Built on <em>Integrity</em>,<br/>Driven by <em>Service</em></h2>
+              <p class="wc-v1-desc">A veteran-owned company that handles every detail &mdash; from paperwork to custodian calls &mdash; so you can focus on what matters most.</p>
+              <div class="wc-v1-items">
+                <div class="wc-v1-item">
+                  <span class="wc-v1-num">01</span>
+                  <div>
+                    <h4>Veteran Owned Business</h4>
+                    <p>Discipline, integrity, and service excellence in every client relationship.</p>
+                  </div>
+                </div>
+                <div class="wc-v1-item">
+                  <span class="wc-v1-num">02</span>
+                  <div>
+                    <h4>Around the Clock Support</h4>
+                    <p>Full account management and consulting support at no extra cost, any time you need.</p>
+                  </div>
+                </div>
+                <div class="wc-v1-item">
+                  <span class="wc-v1-num">03</span>
+                  <div>
+                    <h4>Direct Contact</h4>
+                    <p style="color: var(--c-pale-yellow); font-weight: 500">(855) 612-5017 &middot; corporate@oaksorsllc.com</p>
+                  </div>
+                </div>
               </div>
-              <h3>Around the Clock Customer Service</h3>
-              <p>
-                Our team is available whenever you need us. Full account
-                management and consulting support at no extra cost.
-              </p>
-            </div>
-
-            <div
-              class="feature-card scroll-reveal"
-              style="transition-delay: 200ms"
-            >
-              <div class="feature-icon bg-pale-yellow">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#fff"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                  ></path>
-                </svg>
-              </div>
-              <h3>CONTACT</h3>
-              <p style="display: flex; flex-direction: column; gap: 8px">
-                <a
-                  href="tel:8556125017"
-                  style="
-                    color: var(--c-pale-yellow);
-                    font-weight: bold;
-                    text-decoration: none;
-                  "
-                  >(855) 612-5017</a
-                >
-                <a
-                  href="mailto:corporate@oaksorsllc.com"
-                  style="
-                    color: var(--c-pale-yellow);
-                    font-weight: bold;
-                    text-decoration: none;
-                  "
-                  >corporate@oaksorsllc.com</a
-                >
-              </p>
             </div>
           </div>
         </div>
@@ -1189,7 +1145,7 @@
                     font-weight: bold;
                     font-size: 14px;
                   "
-                  >↑ 0.81%</span
+                  >â†‘ 0.81%</span
                 >
               </div>
               <div
@@ -1262,7 +1218,7 @@
                     font-weight: bold;
                     font-size: 14px;
                   "
-                  >↑ 1.62%</span
+                  >â†‘ 1.62%</span
                 >
               </div>
               <div
@@ -1325,7 +1281,7 @@
                   >$1,682.50</span
                 >
                 <span style="color: #ff4d4d; font-weight: bold; font-size: 14px"
-                  >↓ -0.62%</span
+                  >â†“ -0.62%</span
                 >
               </div>
               <div
@@ -1398,7 +1354,7 @@
                     font-weight: bold;
                     font-size: 14px;
                   "
-                  >↑ 1.13%</span
+                  >â†‘ 1.13%</span
                 >
               </div>
               <div
@@ -1465,7 +1421,7 @@
                 "
               >
                 Everything you need to confidently manage your precious metals
-                portfolio — designed with simplicity, speed, and honesty in
+                portfolio â€” designed with simplicity, speed, and honesty in
                 mind.
               </p>
 
@@ -1627,7 +1583,7 @@
                 style="
                   background-color: rgba(30, 186, 151, 0.1);
                   border-radius: 24px;
-                  padding: 24px;
+                  padding: 12px;
                   overflow: hidden;
                   display: flex;
                   align-items: center;
@@ -1870,7 +1826,7 @@
     <!-- JavaScript -->
     <script src="script.js"></script>
     <script>
-      // ── Apply SITE_CONFIG to all data-link, data-text, and data-src-config elements ──
+      // â”€â”€ Apply SITE_CONFIG to all data-link, data-text, and data-src-config elements â”€â”€
       document.addEventListener("DOMContentLoaded", function () {
         if (typeof SITE_CONFIG === "undefined") return;
 
@@ -1887,6 +1843,9 @@
         });
 
         // Set src on all [data-src-config] elements (video sources, images, etc.)
+        // â”€â”€ Commented out â€” hero video is disabled, using static image instead â”€â”€
+        // â”€â”€ Uncomment this block AND the video HTML AND the heroVideo config to restore video â”€â”€
+        /*
         document.querySelectorAll("[data-src-config]").forEach(function (el) {
           var key = el.getAttribute("data-src-config");
           if (!SITE_CONFIG[key]) return;
@@ -1895,7 +1854,7 @@
           var isSource = el.tagName === "SOURCE";
           var video = isSource ? el.parentElement : null;
 
-          // ── HLS stream (.m3u8) ──
+          // â”€â”€ HLS stream (.m3u8) â”€â”€
           if (url.includes(".m3u8")) {
             if (video) {
               if (typeof Hls !== "undefined" && Hls.isSupported()) {
@@ -1917,7 +1876,7 @@
               }
             }
           }
-          // ── Direct file (.mp4, .webm, etc.) ──
+          // â”€â”€ Direct file (.mp4, .webm, etc.) â”€â”€
           else {
             el.src = url;
             if (isSource && video) {
@@ -1926,10 +1885,11 @@
             }
           }
         });
+        */
       });
     </script>
     <script>
-      // ── Preloader Logic ──
+      // â”€â”€ Preloader Logic â”€â”€
       (function () {
         var preloader = document.getElementById("site-preloader");
         var loaderBar = document.getElementById("loader-bar");
@@ -1970,14 +1930,26 @@
           }, 300);
         }
 
-        // Wait for hero video to start playing
-        if (video) {
-          video.addEventListener("playing", dismissPreloader);
-          video.addEventListener("canplaythrough", dismissPreloader);
+        // Wait for hero background to be ready
+        var heroImg = document.querySelector('#top img.hero-bg-animate');
+        if (heroImg) {
+          // If the image is already cached / loaded, dismiss immediately
+          if (heroImg.complete && heroImg.naturalWidth > 0) {
+            dismissPreloader();
+          } else {
+            heroImg.addEventListener("load", dismissPreloader);
+            heroImg.addEventListener("error", dismissPreloader);
+          }
         }
 
-        // Fallback: dismiss after 10 seconds regardless
-        setTimeout(dismissPreloader, 10000);
+        // â”€â”€ Video preloader (commented out â€” uncomment when restoring video) â”€â”€
+        // if (video) {
+        //   video.addEventListener("playing", dismissPreloader);
+        //   video.addEventListener("canplaythrough", dismissPreloader);
+        // }
+
+        // Fallback: dismiss after 4 seconds regardless
+        setTimeout(dismissPreloader, 4000);
       })();
     </script>
   </body>

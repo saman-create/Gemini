@@ -346,7 +346,7 @@ body {
     transition: transform 0.3s ease-out;
 }
 
-/* ── Buttons on light backgrounds (auto-invert) ── */
+/* â”€â”€ Buttons on light backgrounds (auto-invert) â”€â”€ */
 .content-section:not(.bg-dark) .btn-primary,
 .form-container .btn-primary {
     background: var(--c-pale-yellow);
@@ -1099,7 +1099,7 @@ body {
 }
 
 .features-list li::before {
-    content: '✓';
+    content: 'âœ“';
     color: var(--c-pale-yellow);
 }
 
@@ -1193,7 +1193,7 @@ body {
    Scroll & Entrance Animations
    ==================================== */
 
-/* Base reveal — slides up smoothly */
+/* Base reveal â€” slides up smoothly */
 .scroll-reveal {
     opacity: 0;
     transform: translateY(60px);
@@ -1230,7 +1230,7 @@ body {
     transform: scale(1) translateY(0);
 }
 
-/* ── Hero Background Zoom ── */
+/* â”€â”€ Hero Background Zoom â”€â”€ */
 .hero-bg-animate {
     animation: heroBgZoom 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     transform-origin: center center;
@@ -1247,7 +1247,7 @@ body {
     }
 }
 
-/* ── Hero Entrance Animation ── */
+/* â”€â”€ Hero Entrance Animation â”€â”€ */
 .hero-animate {
     opacity: 0;
     transform: translateY(50px);
@@ -1270,7 +1270,7 @@ body {
     }
 }
 
-/* Hero bars entrance — drops in with a spring bounce */
+/* Hero bars entrance â€” drops in with a spring bounce */
 .hero-bar-gold {
     opacity: 0;
     animation: barEntranceGold 1.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s forwards,
@@ -1305,7 +1305,7 @@ body {
     }
 }
 
-/* ══ Mobile Responsiveness ══ */
+/* â•â• Mobile Responsiveness â•â• */
 @media (max-width: 767px) {
     /* Reduce left/right padding */
     .container {
@@ -1380,7 +1380,7 @@ body {
         gap: 40px !important;
     }
 
-    /* ── How Do I Start: Horizontal Carousel ── */
+    /* â”€â”€ How Do I Start: Horizontal Carousel â”€â”€ */
     .steps-grid {
         display: flex !important;
         grid-template-columns: none !important;
@@ -1405,7 +1405,7 @@ body {
         scrollbar-width: none;
     }
 
-    /* ── Precious Metals: Horizontal Carousel ── */
+    /* â”€â”€ Precious Metals: Horizontal Carousel â”€â”€ */
     .metals-carousel {
         display: flex !important;
         grid-template-columns: none !important;
@@ -1590,3 +1590,148 @@ body {
 #cta-section .section-subtitle {
     color: #475569;
 }
+
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   WHY CHOOSE OAKSORS â€” Final Design
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+
+/* Eyebrow label */
+.wc-v1-eyebrow {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    color: var(--c-pale-yellow);
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+/* Section heading: matches .section-title */
+.wc-v1-title {
+    font-family: var(--font-sans);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 500;
+    letter-spacing: -1.9px;
+    line-height: 1.2;
+    color: #111827;
+    margin-bottom: 16px;
+}
+.wc-v1-title em {
+    color: var(--c-pale-yellow);
+    font-style: normal;
+}
+
+/* Description */
+.wc-v1-desc {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+/* Split Grid */
+.wc-v1-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+/* Image */
+.wc-v1-img-wrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: rgba(30, 186, 151, 0.1);
+    padding: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.wc-v1-img-wrapper img {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    border: 1px solid rgba(30, 186, 151, 0.2);
+}
+
+/* Badge */
+.wc-v1-badge {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    background: var(--c-pale-yellow);
+    color: white;
+    padding: 18px 24px;
+    border-radius: 14px;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 12px 30px rgba(30,186,151,0.35);
+    line-height: 1.2;
+}
+.wc-v1-badge span {
+    display: block;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+/* Numbered Items (V3-style list) */
+.wc-v1-items {
+    display: flex;
+    flex-direction: column;
+}
+.wc-v1-item {
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+}
+.wc-v1-item:first-child {
+    border-top: 1px solid rgba(0,0,0,0.07);
+}
+.wc-v1-item:hover {
+    padding-left: 12px;
+}
+.wc-v1-num {
+    font-family: var(--font-sans);
+    font-size: 44px;
+    font-weight: 500;
+    color: rgba(30,186,151,0.15);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 52px;
+    letter-spacing: -1px;
+    transition: color 0.3s;
+}
+.wc-v1-item:hover .wc-v1-num {
+    color: rgba(30,186,151,0.4);
+}
+.wc-v1-item h4 {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 8px;
+}
+.wc-v1-item p {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .wc-v1-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
